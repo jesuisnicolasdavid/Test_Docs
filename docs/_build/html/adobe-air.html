@@ -1,0 +1,594 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Adobe Air integration &mdash; Ogury Documentation 0.4.0 documentation</title>
+  
+
+  
+  
+    <link rel="shortcut icon" href="_static/favicon.ico"/>
+  
+  
+  
+
+  
+
+  
+  
+    
+
+  
+
+  
+  
+    <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+  
+
+  
+    <link rel="stylesheet" href="_static/custom.css" type="text/css" />
+  
+
+  
+        <link rel="index" title="Index"
+              href="genindex.html"/>
+        <link rel="search" title="Search" href="search.html"/>
+    <link rel="top" title="Ogury Documentation 0.4.0 documentation" href="index.html"/>
+        <link rel="up" title="Plugins" href="plugins.html"/>
+        <link rel="next" title="PhoneGap" href="ionic-phonegap-cordova.html"/>
+        <link rel="prev" title="Unity" href="unity.html"/> 
+
+  
+  <script src="_static/js/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+   
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search">
+          
+
+          
+            <a href="index.html">
+          
+
+          
+            
+            <img src="_static/logo.png" class="logo" />
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                0.4
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <ul class="current">
+<li class="toctree-l1 current"><a class="reference internal" href="getting-started-with-sdk-integration.html">Getting Started With the Ogury Android SDK</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="android_and_changelog.html">Android SDK &amp; Change Log</a></li>
+<li class="toctree-l2"><a class="reference internal" href="update_to_sdk_X.html">Update to SDK 2.1+</a></li>
+<li class="toctree-l2 current"><a class="reference internal" href="plugins.html">Plugins</a><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="unity.html">Unity</a></li>
+<li class="toctree-l3 current"><a class="current reference internal" href="#">Adobe Air integration</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ionic-phonegap-cordova.html">PhoneGap</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="optin-video.html">Optin Video</a></li>
+<li class="toctree-l1"><a class="reference internal" href="interstitial.html">Interstitials</a></li>
+<li class="toctree-l1"><a class="reference internal" href="ad-settings.html">Ad Settings</a></li>
+<li class="toctree-l1"><a class="reference internal" href="mediation.html">Mediations</a></li>
+<li class="toctree-l1"><a class="reference internal" href="integration-checklists.html">Integration Checklists</a></li>
+<li class="toctree-l1"><a class="reference internal" href="faq.html">FAQ</a></li>
+<li class="toctree-l1"><a class="reference internal" href="contact-support.html">Contact Support</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">Ogury Documentation</a>
+        
+      </nav>
+
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="index.html">Docs</a> &raquo;</li>
+        
+          <li><a href="getting-started-with-sdk-integration.html">Getting Started With the Ogury Android SDK</a> &raquo;</li>
+        
+          <li><a href="plugins.html">Plugins</a> &raquo;</li>
+        
+      <li>Adobe Air integration</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="adobe-air-integration">
+<span id="adobe-air"></span><h1>Adobe Air integration<a class="headerlink" href="#adobe-air-integration" title="Permalink to this headline">¶</a></h1>
+<p>Installation Instructions for Presage Library</p>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last"><strong>Requirements:</strong>
+JDK 1.6 or later
+SDK Air 23 or later</p>
+</div>
+<div class="line-block">
+<div class="line"><br /></div>
+<div class="line"><br /></div>
+</div>
+<div class="section" id="step-1-adding-presage">
+<h2>Step 1: Adding Presage<a class="headerlink" href="#step-1-adding-presage" title="Permalink to this headline">¶</a></h2>
+<p>In order to add Ogury SDK to your app, you need to add the presage library and Include it in the native extensions of your project’s build path.</p>
+<ol class="arabic simple">
+<li>Download Presage.ane</li>
+<li>Include it in the native extensions of your project’s build path</li>
+</ol>
+<div class="admonition seealso">
+<p class="first admonition-title">See also</p>
+<p class="last">If you want to see one example of integration:
+Github   Access Adobe Air sample project on Github</p>
+</div>
+<div class="line-block">
+<div class="line"><br /></div>
+<div class="line"><br /></div>
+</div>
+</div>
+<div class="section" id="step-2-editing-your-manifest-file">
+<h2>Step 2 - Editing Your Manifest File<a class="headerlink" href="#step-2-editing-your-manifest-file" title="Permalink to this headline">¶</a></h2>
+<p><strong>1. Adding Presage Service</strong></p>
+<p>1.1. Default configuration</p>
+<p>Copy these lines in your AndroidManifest.xml inside &lt;application&gt; tag.
+You can find your API_KEY on Ogury Admin.</p>
+<div class="highlight-xml"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre> 1
+ 2
+ 3
+ 4
+ 5
+ 6
+ 7
+ 8
+ 9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25
+26
+27
+28
+29
+30
+31
+32
+33
+34
+35</pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="c">&lt;!-- PRESAGE LIBRARY --&gt;</span>
+<span class="nt">&lt;meta-data</span> <span class="na">android:name=</span><span class="s">&quot;presage_key&quot;</span> <span class="na">android:value=</span><span class="s">&quot;264571&quot;</span><span class="nt">/&gt;</span>
+<span class="nt">&lt;service</span>
+    <span class="na">android:name=</span><span class="s">&quot;io.presage.PresageService&quot;</span>
+    <span class="na">android:enabled=</span><span class="s">&quot;true&quot;</span>
+    <span class="na">android:exported=</span><span class="s">&quot;true&quot;</span>
+    <span class="na">android:process=</span><span class="s">&quot;:remote&quot;</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;intent-filter&gt;</span>
+        <span class="nt">&lt;action</span> <span class="na">android:name=</span><span class="s">&quot;io.presage.PresageService.PIVOT&quot;</span> <span class="nt">/&gt;</span>
+    <span class="nt">&lt;/intent-filter&gt;</span>
+<span class="nt">&lt;/service&gt;</span>
+<span class="nt">&lt;activity</span>
+    <span class="na">android:name=</span><span class="s">&quot;io.presage.activities.PresageActivity&quot;</span>
+    <span class="na">android:configChanges=</span><span class="s">&quot;keyboard|keyboardHidden|orientation|screenSize&quot;</span>
+    <span class="na">android:hardwareAccelerated=</span><span class="s">&quot;true&quot;</span>
+    <span class="na">android:label=</span><span class="s">&quot;@string/app_name&quot;</span>
+    <span class="na">android:theme=</span><span class="s">&quot;@android:style/Theme.Translucent.NoTitleBar&quot;</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;intent-filter&gt;</span>
+        <span class="nt">&lt;action</span> <span class="na">android:name=</span><span class="s">&quot;io.presage.intent.action.LAUNCH_WEBVIEW&quot;</span> <span class="nt">/&gt;</span>
+        <span class="nt">&lt;category</span> <span class="na">android:name=</span><span class="s">&quot;android.intent.category.DEFAULT&quot;</span> <span class="nt">/&gt;</span>
+    <span class="nt">&lt;/intent-filter&gt;</span>
+<span class="nt">&lt;/activity&gt;</span>
+<span class="nt">&lt;receiver</span> <span class="na">android:name=</span><span class="s">&quot;io.presage.receiver.NetworkChangeReceiver&quot;</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;intent-filter&gt;</span>
+        <span class="nt">&lt;action</span> <span class="na">android:name=</span><span class="s">&quot;android.net.conn.CONNECTIVITY_CHANGE&quot;</span> <span class="nt">/&gt;</span>
+        <span class="nt">&lt;action</span> <span class="na">android:name=</span><span class="s">&quot;android.net.wifi.WIFI_STATE_CHANGED&quot;</span> <span class="nt">/&gt;</span>
+        <span class="nt">&lt;action</span> <span class="na">android:name=</span><span class="s">&quot;io.presage.receiver.NetworkChangeReceiver.ONDESTROY&quot;</span> <span class="nt">/&gt;</span>
+    <span class="nt">&lt;/intent-filter&gt;</span>
+<span class="nt">&lt;/receiver&gt;</span>
+<span class="nt">&lt;receiver</span> <span class="na">android:name=</span><span class="s">&quot;io.presage.receiver.AlarmReceiver&quot;</span> <span class="nt">/&gt;</span>
+<span class="nt">&lt;provider</span>
+    <span class="na">android:name=</span><span class="s">&quot;io.presage.provider.PresageProvider&quot;</span>
+    <span class="na">android:authorities=</span><span class="s">&quot;${applicationId}.PresageProvider&quot;</span>
+    <span class="na">android:enabled=</span><span class="s">&quot;true&quot;</span>
+    <span class="na">android:exported=</span><span class="s">&quot;true&quot;</span> <span class="nt">/&gt;</span>
+</pre></div>
+</td></tr></table></div>
+<p>By default, the build tools provide your app’s application ID in the ${applicationId} placeholder.</p>
+<p>1.2. Mediation Layer configuration</p>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">The configuration of your AndroidManifest.xml is almost the same as above. Only one line change.
+You have to put 000000 as presage_key.</p>
+</div>
+<div class="highlight-xml"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>1</pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="nt">&lt;meta-data</span> <span class="na">android:name=</span><span class="s">&quot;presage_key&quot;</span> <span class="na">android:value=</span><span class="s">&quot;000000&quot;</span><span class="nt">/&gt;</span>
+</pre></div>
+</td></tr></table></div>
+<p><strong>2. Adding Internet permissions</strong></p>
+<p>Placed just before the opening tag:</p>
+<div class="highlight-xml"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>1
+2</pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="nt">&lt;uses-permission</span> <span class="na">android:name=</span><span class="s">&quot;android.permission.INTERNET&quot;</span> <span class="nt">/&gt;</span>
+<span class="nt">&lt;uses-permission</span> <span class="na">android:name=</span><span class="s">&quot;android.permission.ACCESS_NETWORK_STATE&quot;</span> <span class="nt">/&gt;</span>
+</pre></div>
+</td></tr></table></div>
+<div class="line-block">
+<div class="line"><br /></div>
+<div class="line"><br /></div>
+</div>
+</div>
+<div class="section" id="step-3-editing-your-main-file">
+<h2>Step 3 - Editing Your Main File<a class="headerlink" href="#step-3-editing-your-main-file" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="default-use">
+<h3>1. Default use<a class="headerlink" href="#default-use" title="Permalink to this headline">¶</a></h3>
+<p>Add the following import</p>
+<div class="highlight-javascript"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>1</pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="kr">import</span> <span class="nx">io</span><span class="p">.</span><span class="nx">presage</span><span class="p">.</span><span class="nx">extensions</span><span class="p">.</span><span class="nx">Presage</span><span class="p">;</span>
+</pre></div>
+</td></tr></table></div>
+<p>Inside a script just call once this line:</p>
+<div class="highlight-javascript"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>1</pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="nx">Presage</span><span class="p">.</span><span class="nx">StartPresage</span><span class="p">();</span>
+</pre></div>
+</td></tr></table></div>
+</div>
+<div class="section" id="mediation-layer-use">
+<h3>2. Mediation Layer use<a class="headerlink" href="#mediation-layer-use" title="Permalink to this headline">¶</a></h3>
+<p>Add the following import</p>
+<div class="highlight-javascript"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>1</pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="kr">import</span> <span class="nx">io</span><span class="p">.</span><span class="nx">presage</span><span class="p">.</span><span class="nx">extensions</span><span class="p">.</span><span class="nx">Presage</span><span class="p">;</span>
+</pre></div>
+</td></tr></table></div>
+<p>Add this line when you want to start the Presage SDK. Don’t forget to replace PRESAGE_KEY_HERE with the one you will get from us.
+This call can be only done one time! It’s not possible to have several presage_key in a single application.</p>
+<div class="highlight-javascript"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>1</pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="nx">Presage</span><span class="p">.</span><span class="nx">StartPresage</span><span class="p">(</span><span class="nx">PRESAGE_KEY_HERE</span><span class="p">);</span>
+</pre></div>
+</td></tr></table></div>
+<div class="line-block">
+<div class="line"><br /></div>
+<div class="line"><br /></div>
+</div>
+</div>
+</div>
+<div class="section" id="step-4-enabling-interstitial">
+<h2>Step 4 - Enabling Interstitial<a class="headerlink" href="#step-4-enabling-interstitial" title="Permalink to this headline">¶</a></h2>
+<p>There is now several ways to show an ad :
+1. adToServe(): the ad is loaded and directly shown after the function call
+2. load(), canShow(), show(): it will preload ads locally and show them when asked</p>
+<div class="section" id="ad-without-precaching">
+<h3>1. Ad without precaching<a class="headerlink" href="#ad-without-precaching" title="Permalink to this headline">¶</a></h3>
+<p>Import the following</p>
+<div class="highlight-javascript"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>1</pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="kr">import</span> <span class="nx">io</span><span class="p">.</span><span class="nx">presage</span><span class="p">.</span><span class="nx">extensions</span><span class="p">.</span><span class="nx">Presage</span><span class="p">;</span>
+</pre></div>
+</td></tr></table></div>
+<p>Add this line to call for an interstitial:</p>
+<div class="highlight-javascript"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>1</pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="nx">Presage</span><span class="p">.</span><span class="nx">AdToServe</span><span class="p">();</span>
+</pre></div>
+</td></tr></table></div>
+</div>
+<div class="section" id="ad-with-precaching">
+<h3>2. Ad with precaching<a class="headerlink" href="#ad-with-precaching" title="Permalink to this headline">¶</a></h3>
+<p><strong>2.1. Load()</strong></p>
+<p>This function must be called just after the start of the application. It will preload ads locally.
+You can let decided the SDK how many ads to precache or to pass it as a parameter.</p>
+<p>Load function answer with callbacks. OnAdLoaded can be used to then call CanShow and Show functions.</p>
+<p>You can’t ask for more than 3 ads to precache.
+The number of load calls is limited to 3 in 3 minutes.
+Import the following</p>
+<p>import io.presage.extensions.Presage;
+Add this line to load an ad:</p>
+<div class="highlight-javascript"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>1</pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="nx">Presage</span><span class="p">.</span><span class="nx">Load</span><span class="p">();</span>
+</pre></div>
+</td></tr></table></div>
+<p>or</p>
+<p>Add this line to load x ads:</p>
+<div class="highlight-javascript"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>1</pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="nx">Presage</span><span class="p">.</span><span class="nx">Load</span><span class="p">(</span><span class="mi">2</span><span class="p">);</span>
+</pre></div>
+</td></tr></table></div>
+<p><strong>2.2. CanShow() and Show()</strong></p>
+<p>Those two functions can be called when you want to show an ad.</p>
+<p>CanShow()
+return a boolean
+It verify if ads are preloaded locally, if Internet is available and if the ads are still valid</p>
+<p>Show()</p>
+<div class="highlight-javascript"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>1
+2</pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="k">if</span><span class="p">(</span><span class="nx">Presage</span><span class="p">.</span><span class="nx">CanShow</span><span class="p">())</span>
+    <span class="nx">Presage</span><span class="p">.</span><span class="nx">Show</span><span class="p">()</span>
+</pre></div>
+</td></tr></table></div>
+<p>Show calls are limited to one in 50 seconds.</p>
+<div class="line-block">
+<div class="line"><br /></div>
+<div class="line"><br /></div>
+</div>
+</div>
+</div>
+<div class="section" id="step-5-optional-using-the-events">
+<h2>Step 5 (optional) - Using the events<a class="headerlink" href="#step-5-optional-using-the-events" title="Permalink to this headline">¶</a></h2>
+<p>We have three events, one if an ad is about to be displayed, one if no ad was found and one when the user closes the ad.</p>
+<p>Add the following import:</p>
+<p>import io.presage.extensions.events.PresageEvent;
+Now declare a function to call when no ad needs to be displayed as followed:</p>
+<div class="highlight-javascript"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre> 1
+ 2
+ 3
+ 4
+ 5
+ 6
+ 7
+ 8
+ 9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25
+26
+27
+28
+29
+30
+31
+32
+33
+34
+35
+36
+37
+38
+39
+40</pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="kr">private</span> <span class="kr">static</span> <span class="kd">function</span> <span class="nx">handleAdEvent</span><span class="p">(</span><span class="nx">e</span><span class="o">:</span><span class="nx">PresageEvent</span><span class="p">)</span><span class="o">:</span><span class="k">void</span>
+<span class="p">{</span>
+<span class="k">switch</span><span class="p">(</span><span class="nx">e</span><span class="p">.</span><span class="nx">type</span><span class="p">)</span>
+<span class="p">{</span>
+    <span class="k">case</span> <span class="nx">PresageEvent</span><span class="p">.</span><span class="nx">AD_NOT_AVAILABLE</span><span class="o">:</span>
+    <span class="p">{</span>
+    <span class="c1">// Called if no Ad is available</span>
+    <span class="k">break</span><span class="p">;</span>
+    <span class="p">}</span>
+
+    <span class="k">case</span> <span class="nx">PresageEvent</span><span class="p">.</span><span class="nx">AD_AVAILABLE</span><span class="o">:</span>
+    <span class="p">{</span>
+    <span class="c1">// Called if an ad is available</span>
+    <span class="k">break</span><span class="p">;</span>
+    <span class="p">}</span>
+    <span class="k">case</span> <span class="nx">PresageEvent</span><span class="p">.</span><span class="nx">AD_LOADED</span><span class="o">:</span>
+    <span class="p">{</span>
+    <span class="c1">// Called if  ad was loaded by load() method</span>
+    <span class="k">break</span><span class="p">;</span>
+    <span class="p">}</span>
+
+    <span class="k">case</span> <span class="nx">PresageEvent</span><span class="p">.</span><span class="nx">AD_CLOSED</span><span class="o">:</span>
+    <span class="p">{</span>
+    <span class="c1">// Called if a displayed ad was closed by the user</span>
+    <span class="k">break</span><span class="p">;</span>
+    <span class="p">}</span>
+
+    <span class="k">case</span> <span class="nx">PresageEvent</span><span class="p">.</span><span class="nx">AD_ERROR</span><span class="o">:</span>
+    <span class="p">{</span>
+    <span class="c1">// Called if an ad that was found got an error</span>
+    <span class="k">break</span><span class="p">;</span>
+    <span class="p">}</span>
+
+    <span class="k">case</span> <span class="nx">PresageEvent</span><span class="p">.</span><span class="nx">AD_DISPLAYED</span><span class="o">:</span>
+    <span class="p">{</span>
+    <span class="c1">// Called if an ad is currently displayed on screen</span>
+    <span class="k">break</span><span class="p">;</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+<span class="p">}</span>
+</pre></div>
+</td></tr></table></div>
+<p>Now just register the listener that will be called in this case:</p>
+<div class="highlight-javascript"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>1
+2
+3
+4
+5
+6</pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="nx">Presage</span><span class="p">.</span><span class="nx">getInstance</span><span class="p">().</span><span class="nx">addEventListener</span><span class="p">(</span><span class="nx">PresageEvent</span><span class="p">.</span><span class="nx">AD_NOT_AVAILABLE</span><span class="p">,</span> <span class="nx">handleAdEvent</span><span class="p">);</span>
+<span class="nx">Presage</span><span class="p">.</span><span class="nx">getInstance</span><span class="p">().</span><span class="nx">addEventListener</span><span class="p">(</span><span class="nx">PresageEvent</span><span class="p">.</span><span class="nx">AD_AVAILABLE</span><span class="p">,</span> <span class="nx">handleAdEvent</span><span class="p">);</span>
+<span class="nx">Presage</span><span class="p">.</span><span class="nx">getInstance</span><span class="p">().</span><span class="nx">addEventListener</span><span class="p">(</span><span class="nx">PresageEvent</span><span class="p">.</span><span class="nx">AD_LOADED</span><span class="p">,</span> <span class="nx">handleAdEvent</span><span class="p">);</span>
+<span class="nx">Presage</span><span class="p">.</span><span class="nx">getInstance</span><span class="p">().</span><span class="nx">addEventListener</span><span class="p">(</span><span class="nx">PresageEvent</span><span class="p">.</span><span class="nx">AD_CLOSED</span><span class="p">,</span> <span class="nx">handleAdEvent</span><span class="p">);</span>
+<span class="nx">Presage</span><span class="p">.</span><span class="nx">getInstance</span><span class="p">().</span><span class="nx">addEventListener</span><span class="p">(</span><span class="nx">PresageEvent</span><span class="p">.</span><span class="nx">AD_ERROR</span><span class="p">,</span> <span class="nx">handleAdEvent</span><span class="p">);</span>
+<span class="nx">Presage</span><span class="p">.</span><span class="nx">getInstance</span><span class="p">().</span><span class="nx">addEventListener</span><span class="p">(</span><span class="nx">PresageEvent</span><span class="p">.</span><span class="nx">AD_DISPLAYED</span><span class="p">,</span> <span class="nx">handleAdEvent</span><span class="p">);</span>
+</pre></div>
+</td></tr></table></div>
+<div class="line-block">
+<div class="line"><br /></div>
+<div class="line"><br /></div>
+</div>
+</div>
+<div class="section" id="step-6-build-your-application">
+<h2>Step 6 - Build your Application<a class="headerlink" href="#step-6-build-your-application" title="Permalink to this headline">¶</a></h2>
+<p>Once integrated correctly you should receive this Congratulations message on your Testing Device.</p>
+<p>Congratulations message</p>
+<div class="line-block">
+<div class="line"><br /></div>
+<div class="line"><br /></div>
+</div>
+</div>
+<div class="section" id="step-7-request-an-ad-impression">
+<h2>Step 7 - Request an Ad Impression<a class="headerlink" href="#step-7-request-an-ad-impression" title="Permalink to this headline">¶</a></h2>
+<p>As our solution works via precise targeting, in order for you to see a “Test Ad”, you need to “force” it to show. In order to do so, please follow:</p>
+<p>Find your Android Advertising ID (aaid) on your device Google Settings &gt; Ads (for more details see this document)
+Go to Integration &gt; My Test Devices
+Click New Test Device and enter your aaid, then click Create Device
+And finally click Push an AD
+Once you have requested an impression, please go to your newly integrated app. When you open it you will see an ad ONLY ONCE. If you wish to see it again, make another request by re-clicking the button.</p>
+</div>
+</div>
+
+
+           </div>
+           <div class="articleComments">
+            
+           </div>
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="ionic-phonegap-cordova.html" class="btn btn-neutral float-right" title="PhoneGap" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="unity.html" class="btn btn-neutral" title="Unity" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2017, Ogury.
+
+    </p>
+  </div> 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  
+
+    <script type="text/javascript">
+        var DOCUMENTATION_OPTIONS = {
+            URL_ROOT:'./',
+            VERSION:'0.4.0',
+            COLLAPSE_INDEX:false,
+            FILE_SUFFIX:'.html',
+            HAS_SOURCE:  true,
+            SOURCELINK_SUFFIX: '.txt'
+        };
+    </script>
+      <script type="text/javascript" src="_static/jquery.js"></script>
+      <script type="text/javascript" src="_static/underscore.js"></script>
+      <script type="text/javascript" src="_static/doctools.js"></script>
+
+  
+
+  
+  
+    <script type="text/javascript" src="_static/js/theme.js"></script>
+  
+
+  
+  
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.StickyNav.enable();
+      });
+  </script>
+   
+
+</body>
+</html>

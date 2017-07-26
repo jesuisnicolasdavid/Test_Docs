@@ -1,0 +1,1059 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Mediations &mdash; Ogury Documentation 0.4.0 documentation</title>
+  
+
+  
+  
+    <link rel="shortcut icon" href="_static/favicon.ico"/>
+  
+  
+  
+
+  
+
+  
+  
+    
+
+  
+
+  
+  
+    <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+  
+
+  
+    <link rel="stylesheet" href="_static/custom.css" type="text/css" />
+  
+
+  
+        <link rel="index" title="Index"
+              href="genindex.html"/>
+        <link rel="search" title="Search" href="search.html"/>
+    <link rel="top" title="Ogury Documentation 0.4.0 documentation" href="index.html"/>
+        <link rel="next" title="Integration Checklists" href="integration-checklists.html"/>
+        <link rel="prev" title="Ad Settings" href="ad-settings.html"/> 
+
+  
+  <script src="_static/js/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+   
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search">
+          
+
+          
+            <a href="index.html">
+          
+
+          
+            
+            <img src="_static/logo.png" class="logo" />
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                0.4
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="getting-started-with-sdk-integration.html">Getting Started With the Ogury Android SDK</a></li>
+<li class="toctree-l1"><a class="reference internal" href="optin-video.html">Optin Video</a></li>
+<li class="toctree-l1"><a class="reference internal" href="interstitial.html">Interstitials</a></li>
+<li class="toctree-l1"><a class="reference internal" href="ad-settings.html">Ad Settings</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Mediations</a></li>
+<li class="toctree-l1"><a class="reference internal" href="integration-checklists.html">Integration Checklists</a></li>
+<li class="toctree-l1"><a class="reference internal" href="faq.html">FAQ</a></li>
+<li class="toctree-l1"><a class="reference internal" href="contact-support.html">Contact Support</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">Ogury Documentation</a>
+        
+      </nav>
+
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="index.html">Docs</a> &raquo;</li>
+        
+      <li>Mediations</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="mediations">
+<span id="id1"></span><h1>Mediations<a class="headerlink" href="#mediations" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="mopub">
+<h2>Mopub<a class="headerlink" href="#mopub" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="mopub-interstitials-adapters">
+<h3>1. Mopub Interstitials Adapters<a class="headerlink" href="#mopub-interstitials-adapters" title="Permalink to this headline">¶</a></h3>
+<p><strong>Quick Start for Mopub Interstitials</strong></p>
+<div class="line-block">
+<div class="line">1. Create a subclass of CustomEventInterstitial in the com.mopub.mobileads package of your application.</div>
+<div class="line"><br /></div>
+<div class="line">2. Override the loadInterstitial(Context, CustomEventInterstitialListener, Map&lt;String, Object&gt;, Map&lt;String, String&gt;) method and implement code that requests an interstitial.</div>
+<div class="line"><br /></div>
+<div class="line">3. Override the showInterstitial() method and implement code that displays your interstitial.</div>
+<div class="line"><br /></div>
+<div class="line">4. When your ad loads successfully, you must notify MoPub of the event and display your ad by calling the onInterstitialLoaded() method on the CustomEventInterstitialListener object (passed in loadAd).</div>
+<div class="line"><br /></div>
+<div class="line">5. Similarly, you must notify the CustomEventInterstitialListener object when your ad fails to load by calling the onInterstitialFailed(MoPubErrorCode) method on the listener object.</div>
+<div class="line"><br /></div>
+<div class="line">(Optional) Notify the listener object of other ad lifecycle events via the corresponding methods on CustomEventInterstitialListener.</div>
+<div class="line"><cite>public void onInterstitialShown();</cite></div>
+<div class="line"><cite>public void onInterstitialDismissed();</cite></div>
+<div class="line"><cite>public void onInterstitialClicked();</cite></div>
+<div class="line"><cite>public void onLeaveApplication();</cite></div>
+<div class="line"><br /></div>
+<div class="line">(Optional) Override the onInvalidate() method of CustomEventInterstitial if your custom event requires any sort of cleanup.</div>
+<div class="line"><br /></div>
+</div>
+<ol class="arabic simple" start="6">
+<li>Finally, on the MoPub web interface, create a network with the “Custom Native Network” type. Place the fully-qualified class name of your custom event (e.g. com.mopub.mobileads.YourCustomEventInterstitial) in the “Custom Class” column.</li>
+</ol>
+<p>Once you’ve completed these steps, the MoPub SDK will be able to cause your <cite>CustomEventInterstitial</cite> subclass to be instantiated at the proper time while your application is running. You do not need to instantiate any of these subclasses in your application code. <strong>Note:</strong> the MoPub SDK will cause a new <cite>CustomEventInterstitial</cite> object to be instantiated on every ad call, so you can safely make changes to the custom event object’s internal state between calls.
+8</p>
+</div>
+<div class="section" id="mopub-optin-video-adapters">
+<h3>2. Mopub Optin Video Adapters<a class="headerlink" href="#mopub-optin-video-adapters" title="Permalink to this headline">¶</a></h3>
+<p><strong>Quick Start for Mopub Rewarded Video</strong></p>
+<div class="line-block">
+<div class="line">1. Create a subclass of <cite>CustomEventRewardedVideo</cite> in the com.mopub.mobileads package of your application.</div>
+<div class="line"><br /></div>
+<div class="line">2. Use <cite>checkAndInitializeSdk(Context, Map&lt;String, Object&gt;, Map&lt;String, String&gt;) method</cite> to initialize the network SDK</div>
+<div class="line"><br /></div>
+<div class="line">3. Override the <cite>loadWithSdkInitialized(Context, Map&lt;String, Object&gt;, Map&lt;String, String&gt;)</cite> method and implement code that requests a rewarded interstitial.</div>
+<div class="line"><br /></div>
+<div class="line">4. Override <cite>hasVideoAvailable()</cite> method to return whether there is a video available from the network SDK</div>
+<div class="line"><br /></div>
+<div class="line">5. Override the <cite>showVideo()</cite> method and implement code that displays your rewarded interstitial.</div>
+<div class="line"><br /></div>
+<div class="line">6. Notify the listener object of all the ad lifecycle events via the corresponding methods on <cite>MoPubRewardedVideoManager</cite>.</div>
+<div class="line-block">
+<div class="line"><cite>public void onRewardedVideoLoadSuccess</cite></div>
+<div class="line"><cite>public void onRewardedVideoLoadFailure</cite></div>
+<div class="line"><cite>public void onRewardedVideoStarted</cite></div>
+<div class="line"><cite>public void onRewardedVideoPlaybackError</cite></div>
+<div class="line"><cite>public void onRewardedVideoClicked</cite></div>
+<div class="line"><cite>public void onRewardedVideoClosed</cite></div>
+<div class="line"><cite>public void onRewardedVideoCompleted</cite></div>
+<div class="line"><br /></div>
+</div>
+<div class="line">7. (Optional) Override the <cite>onInvalidate()</cite> method of <cite>CustomEventRewardedVideo</cite> if your custom event requires any sort of cleanup.</div>
+<div class="line"><br /></div>
+<div class="line">8. (Optional) Implement <cite>MediationSettings</cite> marker interface if you want to enable to publishers to pass any network specific additional parameters during the initialization.</div>
+<div class="line"><br /></div>
+<div class="line"><br /></div>
+</div>
+</div>
+</div>
+<div class="section" id="admob">
+<h2>Admob<a class="headerlink" href="#admob" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="admob-interstitials-adapters">
+<h3>1. Admob Interstitials Adapters<a class="headerlink" href="#admob-interstitials-adapters" title="Permalink to this headline">¶</a></h3>
+<p><strong>Quick Start for Admob Interstitials</strong></p>
+<p>To implement an interstitial custom event, you first create an interstitial custom event within AdMob Mediation, much like a banner custom event. Then implement a CustomEventInterstitial to provide notification. This example uses the sample ad network as before.</p>
+<p>1. Define a custom event :
+You can define an interstitial custom event through the AdMob Interface. Make sure the value you give for the Class Name has a full path. Parameter should contain any information needed to make an ad request to the network you’re implementing in the custom event.</p>
+<p>2. Request an interstitial :
+Define a class that implements CustomEventInterstitial; we’ll call this class SampleCustomEventInterstitial. When the custom event is chosen from the mediation flow, mediation calls the requestInterstitialAd() method on the class name you provided in the settings. You can use the parameters provided in this method to make an interstitial request to your desired network. The following example shows how to request an interstitial from the sample ad network via a custom event:</p>
+<p>Here’s an example SampleCustomEventInterstitial.java implementation:</p>
+<div class="highlight-java"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre> 1
+ 2
+ 3
+ 4
+ 5
+ 6
+ 7
+ 8
+ 9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25
+26
+27
+28
+29
+30
+31
+32
+33
+34
+35
+36
+37
+38
+39
+40
+41
+42
+43
+44
+45
+46
+47
+48</pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="kd">public</span> <span class="kd">class</span> <span class="nc">SampleCustomEventInterstitial</span> <span class="kd">implements</span> <span class="n">CustomEventInterstitial</span> <span class="o">{</span>
+
+    <span class="cm">/** Represents a {@link SampleInterstitial}. */</span>
+    <span class="kd">private</span> <span class="n">SampleInterstitial</span> <span class="n">sampleInterstitial</span><span class="o">;</span>
+
+    <span class="nd">@Override</span>
+    <span class="kd">public</span> <span class="kt">void</span> <span class="nf">requestInterstitialAd</span><span class="o">(</span><span class="n">Context</span> <span class="n">context</span><span class="o">,</span>
+            <span class="n">CustomEventInterstitialListener</span> <span class="n">listener</span><span class="o">,</span>
+            <span class="n">String</span> <span class="n">serverParameter</span><span class="o">,</span>
+            <span class="n">MediationAdRequest</span> <span class="n">mediationAdRequest</span><span class="o">,</span>
+            <span class="n">Bundle</span> <span class="n">customEventExtras</span><span class="o">)</span> <span class="o">{</span>
+        <span class="cm">/**</span>
+<span class="cm">        * In this method, you should:</span>
+<span class="cm">        * 1. Create your interstitial ad.</span>
+<span class="cm">        * 2. Set your ad network&#39;s listener.</span>
+<span class="cm">        * 3. Make an ad request.</span>
+<span class="cm">        */</span>
+
+        <span class="n">sampleInterstitial</span> <span class="o">=</span> <span class="k">new</span> <span class="n">SampleInterstitial</span><span class="o">(</span><span class="n">context</span><span class="o">);</span>
+
+        <span class="c1">// Here we&#39;re assuming the serverParameter is the ad unit for the sample ad network.</span>
+        <span class="n">sampleInterstitial</span><span class="o">.</span><span class="na">setAdUnit</span><span class="o">(</span><span class="n">serverParameter</span><span class="o">);</span>
+
+        <span class="c1">// Implement a SampleAdListener and forward callbacks to AdMob Mediation.</span>
+        <span class="n">sampleInterstitial</span><span class="o">.</span><span class="na">setAdListener</span><span class="o">(</span><span class="k">new</span> <span class="n">SampleCustomInterstitialEventForwarder</span><span class="o">(</span><span class="n">listener</span><span class="o">));</span>
+
+        <span class="c1">// Make an ad request.</span>
+        <span class="n">sampleInterstitial</span><span class="o">.</span><span class="na">fetchAd</span><span class="o">(</span><span class="n">createSampleRequest</span><span class="o">(</span><span class="n">mediationAdRequest</span><span class="o">));</span>
+    <span class="o">}</span>
+
+    <span class="cm">/**</span>
+<span class="cm">    * Helper method to create a {@link SampleAdRequest}.</span>
+<span class="cm">    * @param mediationAdRequest The mediation request with targeting information.</span>
+<span class="cm">    * @return The created {@link SampleAdRequest}.</span>
+<span class="cm">    */</span>
+    <span class="kd">private</span> <span class="n">SampleAdRequest</span> <span class="nf">createSampleRequest</span><span class="o">(</span><span class="n">MediationAdRequest</span> <span class="n">mediationAdRequest</span><span class="o">)</span> <span class="o">{</span>
+        <span class="n">SampleAdRequest</span> <span class="n">request</span> <span class="o">=</span> <span class="k">new</span> <span class="n">SampleAdRequest</span><span class="o">();</span>
+        <span class="n">request</span><span class="o">.</span><span class="na">setTestMode</span><span class="o">(</span><span class="n">mediationAdRequest</span><span class="o">.</span><span class="na">isTesting</span><span class="o">());</span>
+        <span class="n">request</span><span class="o">.</span><span class="na">setKeywords</span><span class="o">(</span><span class="n">mediationAdRequest</span><span class="o">.</span><span class="na">getKeywords</span><span class="o">());</span>
+        <span class="k">return</span> <span class="n">request</span><span class="o">;</span>
+    <span class="o">}</span>
+
+    <span class="nd">@Override</span>
+    <span class="kd">public</span> <span class="kt">void</span> <span class="nf">showInterstitial</span><span class="o">()</span> <span class="o">{</span>
+        <span class="c1">// Show your interstitial ad.</span>
+        <span class="n">sampleInterstitial</span><span class="o">.</span><span class="na">show</span><span class="o">();</span>
+    <span class="o">}</span>
+<span class="o">}</span>
+</pre></div>
+</td></tr></table></div>
+<p>The interstitial custom event interface requires you to implement the showInterstitial() method. Mediation invokes this method when you tell the Google Mobile Ads SDK to show the interstitial ad.</p>
+<p>3. Notify AdMob Mediation :
+Just as with the banner custom event example, implement your network’s ad listener to send messages back to AdMob Mediation.</p>
+<p>This example SampleCustomInterstitialEventForwarder class implements the SampleAdListener interface to forward the callbacks from the sample ad network:</p>
+<div class="highlight-java"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre> 1
+ 2
+ 3
+ 4
+ 5
+ 6
+ 7
+ 8
+ 9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25
+26
+27
+28
+29
+30
+31
+32
+33
+34
+35
+36
+37
+38
+39
+40
+41
+42
+43
+44
+45
+46
+47</pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="kd">public</span> <span class="kd">class</span> <span class="nc">SampleCustomInterstitialEventForwarder</span> <span class="kd">extends</span> <span class="n">SampleAdListener</span> <span class="o">{</span>
+    <span class="kd">private</span> <span class="n">CustomEventInterstitialListener</span> <span class="n">mInterstitialListener</span><span class="o">;</span>
+
+    <span class="cm">/**</span>
+<span class="cm">    * Creates a new {@code SampleInterstitialEventForwarder}.</span>
+<span class="cm">    * @param listener An AdMob Mediation {@link CustomEventInterstitialListener} that should</span>
+<span class="cm">    *                 receive forwarded events.</span>
+<span class="cm">    */</span>
+    <span class="kd">public</span> <span class="nf">SampleCustomInterstitialEventForwarder</span><span class="o">(</span><span class="n">CustomEventInterstitialListener</span> <span class="n">listener</span><span class="o">)</span> <span class="o">{</span>
+        <span class="k">this</span><span class="o">.</span><span class="na">mInterstitialListener</span> <span class="o">=</span> <span class="n">listener</span><span class="o">;</span>
+    <span class="o">}</span>
+
+    <span class="nd">@Override</span>
+    <span class="kd">public</span> <span class="kt">void</span> <span class="nf">onAdFetchSucceeded</span><span class="o">()</span> <span class="o">{</span>
+        <span class="n">mInterstitialListener</span><span class="o">.</span><span class="na">onAdLoaded</span><span class="o">();</span>
+    <span class="o">}</span>
+
+    <span class="nd">@Override</span>
+    <span class="kd">public</span> <span class="kt">void</span> <span class="nf">onAdFetchFailed</span><span class="o">(</span><span class="n">SampleErrorCode</span> <span class="n">errorCode</span><span class="o">)</span> <span class="o">{</span>
+        <span class="k">switch</span> <span class="o">(</span><span class="n">errorCode</span><span class="o">)</span> <span class="o">{</span>
+            <span class="k">case</span> <span class="n">UNKNOWN</span><span class="o">:</span>
+                <span class="n">mInterstitialListener</span><span class="o">.</span><span class="na">onAdFailedToLoad</span><span class="o">(</span><span class="n">AdRequest</span><span class="o">.</span><span class="na">ERROR_CODE_INTERNAL_ERROR</span><span class="o">);</span>
+                <span class="k">break</span><span class="o">;</span>
+            <span class="k">case</span> <span class="n">BAD_REQUEST</span><span class="o">:</span>
+                <span class="n">mInterstitialListener</span><span class="o">.</span><span class="na">onAdFailedToLoad</span><span class="o">(</span><span class="n">AdRequest</span><span class="o">.</span><span class="na">ERROR_CODE_INVALID_REQUEST</span><span class="o">);</span>
+                <span class="k">break</span><span class="o">;</span>
+            <span class="k">case</span> <span class="n">NETWORK_ERROR</span><span class="o">:</span>
+                <span class="n">mInterstitialListener</span><span class="o">.</span><span class="na">onAdFailedToLoad</span><span class="o">(</span><span class="n">AdRequest</span><span class="o">.</span><span class="na">ERROR_CODE_NETWORK_ERROR</span><span class="o">);</span>
+                <span class="k">break</span><span class="o">;</span>
+            <span class="k">case</span> <span class="n">NO_INVENTORY</span><span class="o">:</span>
+                <span class="n">mInterstitialListener</span><span class="o">.</span><span class="na">onAdFailedToLoad</span><span class="o">(</span><span class="n">AdRequest</span><span class="o">.</span><span class="na">ERROR_CODE_NO_FILL</span><span class="o">);</span>
+                <span class="k">break</span><span class="o">;</span>
+        <span class="o">}</span>
+    <span class="o">}</span>
+
+    <span class="nd">@Override</span>
+    <span class="kd">public</span> <span class="kt">void</span> <span class="nf">onAdFullScreen</span><span class="o">()</span> <span class="o">{</span>
+        <span class="n">mInterstitialListener</span><span class="o">.</span><span class="na">onAdOpened</span><span class="o">();</span>
+        <span class="c1">// Only call onAdLeftApplication if your ad network actually exits the developer&#39;s app.</span>
+        <span class="n">mInterstitialListener</span><span class="o">.</span><span class="na">onAdLeftApplication</span><span class="o">();</span>
+    <span class="o">}</span>
+
+    <span class="nd">@Override</span>
+    <span class="kd">public</span> <span class="kt">void</span> <span class="nf">onAdClosed</span><span class="o">()</span> <span class="o">{</span>
+        <span class="n">mInterstitialListener</span><span class="o">.</span><span class="na">onAdClosed</span><span class="o">();</span>
+    <span class="o">}</span>
+<span class="o">}</span>
+</pre></div>
+</td></tr></table></div>
+<p>This completes the custom events implementation for interstitial ads. The full example is available on GitHub. You can use it with an ad network that is already supported or modify it to display custom interstitial ads.</p>
+</div>
+<div class="section" id="admob-optin-video-adapters">
+<h3>2. Admob Optin Video Adapters<a class="headerlink" href="#admob-optin-video-adapters" title="Permalink to this headline">¶</a></h3>
+<p><strong>Quick Start for Admob Rewarded Video</strong></p>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p>This guide is intended for those looking to use the AdMob Mediation platform to display rewarded video ads from a third party ad network.</p>
+<p class="last">AdMob supported ad networks and custom events :
+Ad networks that are directly supported by the AdMob mediation platform will implement standard mediation adapters. Ad networks that are not directly supported by AdMob can still be be used to request and display rewarded videos by implementing custom event adapters. The differences between standard mediation adapters and custom event adapters are outlined below.</p>
+</div>
+<p>1. Defining server parameters :
+Ad networks mediated to through the AdMob mediation platform need one or more identifiers in order to identify a publisher. These identifiers are represented as server parameters and are defined when configuring a third party ad network for mediation in the AdMob interface. If you are building a custom event adapter, follow the creating a custom event step below. If you are building an adapter your ad network and corresponding server parameters will be configured as part of the ad netowrk onboarding process with AdMob.</p>
+<p>2. Creating a custom event :
+To define a custom event, you must first create it in the AdMob interface. You can find instructions for creating a custom event in this help center guide. Once the custom event is defined, it points to a class within your app that implements MediationRewardedVideoAdAdapter to serve a rewarded video. The custom event also lists a server parameter that is passed to your rewarded video adapter.</p>
+<p>The entries in the example screen shown above represent the following:</p>
+<p>Class Name      The fully qualified name of the class that implements the custom event.
+Label   A unique name for the event.
+Parameter       An optional argument passed to your custom event.
+Implementing a mediation adapter</p>
+<p>This guide demonstrates the steps required to implement an adapter. To show what adapter code may look like in practice, we have created a Sample Ad Network SDK and will be building the adapter for this SDK.</p>
+<p>3. Initialize the adapter :
+On an app’s initial rewarded video ad request, the Google Mobile Ads SDK invokes the initialize() method of your adapter.
+Your adapter is responsible for implementing this method to initialize the third party ad network. This method provides you a Bundle of serverParameters that may be required to complete the initialization. There is a slight difference in how these parameters can be accessed if you’re developing a mediation adapter or a custom event adapter.
+For a mediation adapter, the keys for server parameters are preconfigured, and you can extract the server parameters individually. For custom events, there is a single parameter that can be accessed via the MediationRewardedVideoAdAdapter.CUSTOM_EVENT_SERVER_PARAMETER_FIELD key:</p>
+<p>MEDIATION ADAPTERCUSTOM EVENTS</p>
+<div class="highlight-java"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>1
+2</pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="n">String</span> <span class="n">parameter1</span> <span class="o">=</span> <span class="n">serverParameters</span><span class="o">.</span><span class="na">getString</span><span class="o">(</span><span class="s">&quot;SERVER_PARAMETER_KEY1&quot;</span><span class="o">);</span>
+<span class="n">String</span> <span class="n">parameter2</span> <span class="o">=</span> <span class="n">serverParameters</span><span class="o">.</span><span class="na">getString</span><span class="o">(</span><span class="s">&quot;SERVER_PARAMETER_KEY2&quot;</span><span class="o">);</span>
+</pre></div>
+</td></tr></table></div>
+<p>The adapter should retain a reference to the MediationRewardedVideoAdListener instance so it can forward ad events to the Google Mobile Ads SDK. If initialization succeeds, the adapter should call MediationRewardedVideoAdListener.onInitializationSucceeded(). If adapter initialization fails, the adapter should invoke MediationRewardedVideoAdListener.onInitializationFailed(). In the event that initialization fails, the Google Mobile Ads SDK reattempts to initialize the adapter each time a rewarded video ad request is made. A sample implementation of the initialize() method is shown below:</p>
+<div class="highlight-java"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre> 1
+ 2
+ 3
+ 4
+ 5
+ 6
+ 7
+ 8
+ 9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25
+26
+27
+28
+29
+30
+31
+32
+33
+34
+35
+36
+37
+38</pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="nd">@Override</span>
+<span class="kd">public</span> <span class="kt">void</span> <span class="nf">initialize</span><span class="o">(</span><span class="n">Context</span> <span class="n">context</span><span class="o">,</span>
+    <span class="n">MediationAdRequest</span> <span class="n">mediationAdRequest</span><span class="o">,</span>
+    <span class="n">String</span> <span class="n">unused</span><span class="o">,</span>
+    <span class="n">MediationRewardedVideoAdListener</span> <span class="n">listener</span><span class="o">,</span>
+    <span class="n">Bundle</span> <span class="n">serverParameters</span><span class="o">,</span>
+    <span class="n">Bundle</span> <span class="n">mediationExtras</span><span class="o">)</span> <span class="o">{</span>
+
+    <span class="c1">// In this method you should initialize your SDK.</span>
+
+    <span class="c1">// The sample SDK requires activity context to initialize, so check that the context</span>
+    <span class="c1">// provided by the app is an activity context before initializing.</span>
+    <span class="k">if</span> <span class="o">(!(</span><span class="n">context</span> <span class="k">instanceof</span> <span class="n">Activity</span><span class="o">))</span> <span class="o">{</span>
+        <span class="c1">// Context not an Activity context, log the reason for failure and fail the</span>
+        <span class="c1">// initialization.</span>
+        <span class="n">Log</span><span class="o">.</span><span class="na">d</span><span class="o">(</span><span class="n">TAG</span><span class="o">,</span> <span class="s">&quot;Sample SDK requires an Activity context to initialize&quot;</span><span class="o">);</span>
+        <span class="n">listener</span><span class="o">.</span><span class="na">onInitializationFailed</span><span class="o">(</span>
+                <span class="n">SampleAdapter</span><span class="o">.</span><span class="na">this</span><span class="o">,</span> <span class="n">AdRequest</span><span class="o">.</span><span class="na">ERROR_CODE_INVALID_REQUEST</span><span class="o">);</span>
+        <span class="k">return</span><span class="o">;</span>
+    <span class="o">}</span>
+
+    <span class="c1">// Get the Ad Unit ID for the Sample SDK from serverParameters bundle.</span>
+    <span class="n">String</span> <span class="n">adUnit</span> <span class="o">=</span> <span class="n">serverParameters</span><span class="o">.</span><span class="na">getString</span><span class="o">(</span>
+            <span class="n">MediationRewardedVideoAdAdapter</span><span class="o">.</span><span class="na">CUSTOM_EVENT_SERVER_PARAMETER_FIELD</span><span class="o">);</span>
+
+    <span class="k">if</span> <span class="o">(</span><span class="n">TextUtils</span><span class="o">.</span><span class="na">isEmpty</span><span class="o">(</span><span class="n">adUnit</span><span class="o">))</span> <span class="o">{</span>
+        <span class="n">listener</span><span class="o">.</span><span class="na">onAdFailedToLoad</span><span class="o">(</span><span class="k">this</span><span class="o">,</span> <span class="n">AdRequest</span><span class="o">.</span><span class="na">ERROR_CODE_INVALID_REQUEST</span><span class="o">);</span>
+        <span class="k">return</span><span class="o">;</span>
+    <span class="o">}</span>
+
+    <span class="c1">// Create a rewarded video event forwarder to forward the events from the Sample SDK to</span>
+    <span class="c1">// the Google Mobile Ads SDK.</span>
+    <span class="n">mRewardedVideoEventForwarder</span> <span class="o">=</span>
+            <span class="k">new</span> <span class="n">SampleMediationRewardedVideoEventForwarder</span><span class="o">(</span><span class="n">listener</span><span class="o">,</span> <span class="n">SampleAdapter</span><span class="o">.</span><span class="na">this</span><span class="o">);</span>
+
+    <span class="c1">// Initialize the Sample SDK.</span>
+    <span class="n">SampleRewardedVideo</span><span class="o">.</span><span class="na">initialize</span><span class="o">((</span><span class="n">Activity</span><span class="o">)</span> <span class="n">context</span><span class="o">,</span> <span class="n">adUnit</span><span class="o">,</span> <span class="n">mRewardedVideoEventForwarder</span><span class="o">);</span>
+<span class="o">}</span>
+</pre></div>
+</td></tr></table></div>
+<p>Don’t assume that the context parameter is of type Activity. Depending on publisher implementation, Google Mobile Ads Mediation may forward an application context to your adapter. If your adapter can’t handle an application context, it is recommended to invoke onInitializationFailed() with error code AdRequest.ERROR_CODE_INVALID_REQUEST.</p>
+<div class="highlight-java"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre> 1
+ 2
+ 3
+ 4
+ 5
+ 6
+ 7
+ 8
+ 9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19</pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="kd">public</span> <span class="kd">class</span> <span class="nc">SampleMediationRewardedVideoEventForwarder</span> <span class="kd">extends</span> <span class="n">SampleRewardedVideoAdListener</span> <span class="o">{</span>
+
+    <span class="o">...</span>
+
+    <span class="nd">@Override</span>
+    <span class="kd">public</span> <span class="kt">void</span> <span class="nf">onRewardedVideoInitialized</span><span class="o">()</span> <span class="o">{</span>
+        <span class="kd">super</span><span class="o">.</span><span class="na">onRewardedVideoInitialized</span><span class="o">();</span>
+        <span class="n">mIsInitialized</span> <span class="o">=</span> <span class="kc">true</span><span class="o">;</span>
+        <span class="n">mMediationRewardedVideoAdListener</span><span class="o">.</span><span class="na">onInitializationSucceeded</span><span class="o">(</span><span class="n">mSampleAdapter</span><span class="o">);</span>
+    <span class="o">}</span>
+
+    <span class="nd">@Override</span>
+    <span class="kd">public</span> <span class="kt">void</span> <span class="nf">onRewardedVideoInitializationFailed</span><span class="o">(</span><span class="n">SampleErrorCode</span> <span class="n">error</span><span class="o">)</span> <span class="o">{</span>
+        <span class="kd">super</span><span class="o">.</span><span class="na">onRewardedVideoInitializationFailed</span><span class="o">(</span><span class="n">error</span><span class="o">);</span>
+        <span class="n">mIsInitialized</span> <span class="o">=</span> <span class="kc">false</span><span class="o">;</span>
+        <span class="n">mMediationRewardedVideoAdListener</span><span class="o">.</span><span class="na">onInitializationFailed</span><span class="o">(</span>
+                <span class="n">mSampleAdapter</span><span class="o">,</span> <span class="n">getAdMobErrorCode</span><span class="o">(</span><span class="n">error</span><span class="o">));</span>
+    <span class="o">}</span>
+<span class="o">}</span>
+</pre></div>
+</td></tr></table></div>
+<p>4. Return initialization state :
+The isInitialized() method of your adapter should return false until the adapter’s first call to MediationRewardedVideoAdListener.onInitializationSucceeded(). At that point, this method should always return true, as shown below:</p>
+<div class="highlight-java"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>1
+2
+3
+4</pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="nd">@Override</span>
+<span class="kd">public</span> <span class="kt">boolean</span> <span class="nf">isInitialized</span><span class="o">()</span> <span class="o">{</span>
+    <span class="k">return</span> <span class="n">mRewardedVideoEventForwarder</span> <span class="o">!=</span> <span class="kc">null</span> <span class="o">&amp;&amp;</span> <span class="n">mRewardedVideoEventForwarder</span><span class="o">.</span><span class="na">isInitialized</span><span class="o">();</span>
+<span class="o">}</span>
+</pre></div>
+</td></tr></table></div>
+<p>5. Load a rewarded video :
+Once the adapter invokes the MediationRewardedVideoAdListener.onInitializationSucceeded() method, the Google Mobile Ads SDK can call the loadAd() method of your adapter. This method should request a rewarded video and call MediationRewardedVideoAdListener.onAdLoaded() once it has a rewarded video to show. If no videos are available, the adapter should call MediationRewardedVideoAdListener.onAdFailedToLoad().</p>
+<p>For rewarded videos, many ad networks employ an API where there is no notion of ad requests. Once the ad network has been initialized, you can check if there is inventory for the current user and an ad is ready. If this criteria is met, you can show the ad to the user. A sample implementation of the loadAd() for such an ad network is shown below.</p>
+<div class="highlight-java"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre> 1
+ 2
+ 3
+ 4
+ 5
+ 6
+ 7
+ 8
+ 9
+10
+11
+12</pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="nd">@Override</span>
+<span class="kd">public</span> <span class="kt">void</span> <span class="nf">loadAd</span><span class="o">(</span><span class="n">MediationAdRequest</span> <span class="n">mediationAdRequest</span><span class="o">,</span>
+    <span class="n">Bundle</span> <span class="n">serverParameters</span><span class="o">,</span>
+    <span class="n">Bundle</span> <span class="n">mediationExtras</span><span class="o">)</span> <span class="o">{</span>
+    <span class="k">if</span> <span class="o">(</span><span class="n">SampleRewardedVideo</span><span class="o">.</span><span class="na">isAdAvailable</span><span class="o">())</span> <span class="o">{</span>
+        <span class="c1">// Ad already available, use the forwarder to send a success callback to AdMob.</span>
+        <span class="n">mRewardedVideoEventForwarder</span><span class="o">.</span><span class="na">onAdLoaded</span><span class="o">();</span>
+    <span class="o">}</span> <span class="k">else</span> <span class="o">{</span>
+        <span class="c1">// No ad available, use the forwarder to send a failure callback.</span>
+        <span class="n">mRewardedVideoEventForwarder</span><span class="o">.</span><span class="na">onAdFailedToLoad</span><span class="o">();</span>
+    <span class="o">}</span>
+<span class="o">}</span>
+</pre></div>
+</td></tr></table></div>
+<p>On the first ad request, loadAd() may be called on the adapter immediately after it’s invocation of the MediationRewardedVideoAdListener.onInitializationSucceeded() method. If an ad network is still loading ads at this time, immediately reporting an ad failing to load can result in a large proportion of no fills on that initial rewarded video ad request. In this case, we recommend that adapters track when the loading of ads is in progress and delay responding to the Google Mobile Ads SDK until ads have either successfully loaded or failed to load. The Google Mobile Ads SDK has a timeout in place in case the adapter doesn’t respond fast enough.</p>
+<p>6. Show the rewarded video :
+The Google Mobile Ads SDK may call the showVideo() method of your adapter any time after the adapter notifies the Google Mobile Ads SDK of a successful ad load. The showVideo() method will only ever get called once per successful loadAd callback. Upon invocation of this method, the adapter should play the rewarded video.</p>
+<div class="highlight-java"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre> 1
+ 2
+ 3
+ 4
+ 5
+ 6
+ 7
+ 8
+ 9
+10
+11
+12
+13</pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="nd">@Override</span>
+<span class="kd">public</span> <span class="kt">void</span> <span class="nf">showVideo</span><span class="o">()</span> <span class="o">{</span>
+    <span class="c1">// Show the rewarded video ad.</span>
+    <span class="k">if</span> <span class="o">(</span><span class="n">SampleRewardedVideo</span><span class="o">.</span><span class="na">isAdAvailable</span><span class="o">())</span> <span class="o">{</span>
+        <span class="c1">// Rewarded video ad available, show ad.</span>
+        <span class="n">SampleRewardedVideo</span><span class="o">.</span><span class="na">showAd</span><span class="o">();</span>
+    <span class="o">}</span> <span class="k">else</span> <span class="o">{</span>
+        <span class="c1">// Show ad will only be called if the adapter sends back an ad loaded callback in</span>
+        <span class="c1">// response to a loadAd request. If for any reason the adapter is not ready to show</span>
+        <span class="c1">// an ad after sending an ad loaded callback, log a warning.</span>
+        <span class="n">Log</span><span class="o">.</span><span class="na">w</span><span class="o">(</span><span class="n">TAG</span><span class="o">,</span> <span class="s">&quot;No ads to show.&quot;</span><span class="o">);</span>
+    <span class="o">}</span>
+<span class="o">}</span>
+</pre></div>
+</td></tr></table></div>
+<p>7. Define a reward :
+When the adapter is ready to reward the user, it must create an object that conforms to the RewardItem interface. A sample implementation of RewardItem is shown below:</p>
+<div class="highlight-java"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre> 1
+ 2
+ 3
+ 4
+ 5
+ 6
+ 7
+ 8
+ 9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25
+26
+27
+28</pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="cm">/**</span>
+<span class="cm">* A {@link RewardItem} that maps the sample reward type and reward amount.</span>
+<span class="cm">*/</span>
+<span class="kd">public</span> <span class="kd">class</span> <span class="nc">SampleRewardItem</span> <span class="kd">implements</span> <span class="n">RewardItem</span> <span class="o">{</span>
+    <span class="kd">private</span> <span class="n">String</span> <span class="n">mRewardType</span><span class="o">;</span>
+    <span class="kd">private</span> <span class="kt">int</span> <span class="n">mRewardAmount</span><span class="o">;</span>
+
+    <span class="cm">/**</span>
+<span class="cm">    * Creates a {@link SampleRewardItem}.</span>
+<span class="cm">    *</span>
+<span class="cm">    * @param rewardType   the sample reward type.</span>
+<span class="cm">    * @param rewardAmount the sample reward amount.</span>
+<span class="cm">    */</span>
+    <span class="kd">public</span> <span class="nf">SampleRewardItem</span><span class="o">(</span><span class="n">String</span> <span class="n">rewardType</span><span class="o">,</span> <span class="kt">int</span> <span class="n">rewardAmount</span><span class="o">)</span> <span class="o">{</span>
+        <span class="k">this</span><span class="o">.</span><span class="na">mRewardType</span> <span class="o">=</span> <span class="n">rewardType</span><span class="o">;</span>
+        <span class="k">this</span><span class="o">.</span><span class="na">mRewardAmount</span> <span class="o">=</span> <span class="n">rewardAmount</span><span class="o">;</span>
+    <span class="o">}</span>
+
+    <span class="nd">@Override</span>
+    <span class="kd">public</span> <span class="n">String</span> <span class="nf">getType</span><span class="o">()</span> <span class="o">{</span>
+        <span class="k">return</span> <span class="n">mRewardType</span><span class="o">;</span>
+    <span class="o">}</span>
+
+    <span class="nd">@Override</span>
+    <span class="kd">public</span> <span class="kt">int</span> <span class="nf">getAmount</span><span class="o">()</span> <span class="o">{</span>
+        <span class="k">return</span> <span class="n">mRewardAmount</span><span class="o">;</span>
+    <span class="o">}</span>
+<span class="o">}</span>
+</pre></div>
+</td></tr></table></div>
+<p>To notify the Google Mobile Ads SDK that a user should be rewarded, the adapter is required to invoke the MediationRewardedVideoAdListener.onRewarded() method with an instance of RewardItem as an argument.</p>
+<p>8. Forward ad events to Google Mobile Ads SDK :
+Your adapter is required to notify the Google Mobile Ads SDK when any of the following ad events occur:</p>
+<p>MediationRewardedVideoAdListener method Call when
+onAdOpened()    A full screen overlay covers the app content
+onVideoStarted()        The video ad starts
+onAdClicked()   The video ad is clicked
+onAdLeftApplication()   The user leaves the application due to the video ad (for example, to go to the browser)
+onRewarded()    The video ad rewards the user
+onAdClosed()    The video ad is closed
+An example implementation of ad forwarding to the Google Mobile Ads SDK is shown below:</p>
+<div class="highlight-java"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>  1
+  2
+  3
+  4
+  5
+  6
+  7
+  8
+  9
+ 10
+ 11
+ 12
+ 13
+ 14
+ 15
+ 16
+ 17
+ 18
+ 19
+ 20
+ 21
+ 22
+ 23
+ 24
+ 25
+ 26
+ 27
+ 28
+ 29
+ 30
+ 31
+ 32
+ 33
+ 34
+ 35
+ 36
+ 37
+ 38
+ 39
+ 40
+ 41
+ 42
+ 43
+ 44
+ 45
+ 46
+ 47
+ 48
+ 49
+ 50
+ 51
+ 52
+ 53
+ 54
+ 55
+ 56
+ 57
+ 58
+ 59
+ 60
+ 61
+ 62
+ 63
+ 64
+ 65
+ 66
+ 67
+ 68
+ 69
+ 70
+ 71
+ 72
+ 73
+ 74
+ 75
+ 76
+ 77
+ 78
+ 79
+ 80
+ 81
+ 82
+ 83
+ 84
+ 85
+ 86
+ 87
+ 88
+ 89
+ 90
+ 91
+ 92
+ 93
+ 94
+ 95
+ 96
+ 97
+ 98
+ 99
+100
+101
+102
+103
+104
+105
+106
+107
+108
+109
+110
+111
+112
+113
+114
+115
+116
+117
+118</pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="cm">/**</span>
+<span class="cm">* A {@link SampleRewardedVideoAdListener} that forwards events to AdMob mediation&#39;s {@link }.</span>
+<span class="cm">*/</span>
+<span class="kd">public</span> <span class="kd">class</span> <span class="nc">SampleMediationRewardedVideoEventForwarder</span> <span class="kd">extends</span> <span class="n">SampleRewardedVideoAdListener</span> <span class="o">{</span>
+    <span class="kd">private</span> <span class="n">MediationRewardedVideoAdListener</span> <span class="n">mMediationRewardedVideoAdListener</span><span class="o">;</span>
+    <span class="kd">private</span> <span class="n">SampleAdapter</span> <span class="n">mSampleAdapter</span><span class="o">;</span>
+    <span class="kd">private</span> <span class="kt">boolean</span> <span class="n">mIsInitialized</span><span class="o">;</span>
+
+    <span class="cm">/**</span>
+<span class="cm">    * Creates a new {@link SampleMediationRewardedVideoEventForwarder}.</span>
+<span class="cm">    *</span>
+<span class="cm">    * @param listener      An AdMob Mediation {@link MediationRewardedVideoAdListener} that should</span>
+<span class="cm">    *                      receive forwarded events.</span>
+<span class="cm">    * @param sampleAdapter A {@link SampleAdapter} mediation adapter.</span>
+<span class="cm">    */</span>
+    <span class="kd">public</span> <span class="nf">SampleMediationRewardedVideoEventForwarder</span><span class="o">(</span><span class="n">MediationRewardedVideoAdListener</span> <span class="n">listener</span><span class="o">,</span>
+    <span class="n">SampleAdapter</span> <span class="n">sampleAdapter</span><span class="o">)</span> <span class="o">{</span>
+        <span class="k">this</span><span class="o">.</span><span class="na">mMediationRewardedVideoAdListener</span> <span class="o">=</span> <span class="n">listener</span><span class="o">;</span>
+        <span class="k">this</span><span class="o">.</span><span class="na">mSampleAdapter</span> <span class="o">=</span> <span class="n">sampleAdapter</span><span class="o">;</span>
+    <span class="o">}</span>
+
+    <span class="cm">/**</span>
+<span class="cm">    * @return whether or not the Sample SDK is initialized.</span>
+<span class="cm">    */</span>
+    <span class="kd">public</span> <span class="kt">boolean</span> <span class="nf">isInitialized</span><span class="o">()</span> <span class="o">{</span>
+        <span class="k">return</span> <span class="n">mIsInitialized</span><span class="o">;</span>
+    <span class="o">}</span>
+
+    <span class="nd">@Override</span>
+    <span class="kd">public</span> <span class="kt">void</span> <span class="nf">onRewardedVideoInitialized</span><span class="o">()</span> <span class="o">{</span>
+        <span class="kd">super</span><span class="o">.</span><span class="na">onRewardedVideoInitialized</span><span class="o">();</span>
+        <span class="n">mIsInitialized</span> <span class="o">=</span> <span class="kc">true</span><span class="o">;</span>
+        <span class="n">mMediationRewardedVideoAdListener</span><span class="o">.</span><span class="na">onInitializationSucceeded</span><span class="o">(</span><span class="n">mSampleAdapter</span><span class="o">);</span>
+    <span class="o">}</span>
+
+    <span class="nd">@Override</span>
+    <span class="kd">public</span> <span class="kt">void</span> <span class="nf">onRewardedVideoInitializationFailed</span><span class="o">(</span><span class="n">SampleErrorCode</span> <span class="n">error</span><span class="o">)</span> <span class="o">{</span>
+        <span class="kd">super</span><span class="o">.</span><span class="na">onRewardedVideoInitializationFailed</span><span class="o">(</span><span class="n">error</span><span class="o">);</span>
+        <span class="n">mIsInitialized</span> <span class="o">=</span> <span class="kc">false</span><span class="o">;</span>
+        <span class="n">mMediationRewardedVideoAdListener</span><span class="o">.</span><span class="na">onInitializationFailed</span><span class="o">(</span>
+        <span class="n">mSampleAdapter</span><span class="o">,</span> <span class="n">getAdMobErrorCode</span><span class="o">(</span><span class="n">error</span><span class="o">));</span>
+    <span class="o">}</span>
+
+    <span class="nd">@Override</span>
+    <span class="kd">public</span> <span class="kt">void</span> <span class="nf">onAdRewarded</span><span class="o">(</span><span class="kd">final</span> <span class="n">String</span> <span class="n">rewardType</span><span class="o">,</span> <span class="kd">final</span> <span class="kt">int</span> <span class="n">amount</span><span class="o">)</span> <span class="o">{</span>
+        <span class="kd">super</span><span class="o">.</span><span class="na">onAdRewarded</span><span class="o">(</span><span class="n">rewardType</span><span class="o">,</span> <span class="n">amount</span><span class="o">);</span>
+
+        <span class="cm">/*</span>
+<span class="cm">        * AdMob requires a reward item with a reward type and amount to be sent when sending the</span>
+<span class="cm">        * rewarded callback. If your SDK does not have a reward amount you need to do the following:</span>
+<span class="cm">        *</span>
+<span class="cm">        * 1. AdMob provides an ability to override the reward value in the front end. Document</span>
+<span class="cm">        * this asking the publisher to override the reward value on AdMob&#39;s front end.</span>
+<span class="cm">        * 2. Send a reward item with default values for the type (an empty string &quot;&quot;) and reward</span>
+<span class="cm">        * amount (1).</span>
+<span class="cm">        */</span>
+        <span class="n">mMediationRewardedVideoAdListener</span><span class="o">.</span><span class="na">onRewarded</span><span class="o">(</span>
+                <span class="n">mSampleAdapter</span><span class="o">,</span> <span class="k">new</span> <span class="n">SampleRewardItem</span><span class="o">(</span><span class="n">rewardType</span><span class="o">,</span> <span class="n">amount</span><span class="o">));</span>
+    <span class="o">}</span>
+
+    <span class="nd">@Override</span>
+    <span class="kd">public</span> <span class="kt">void</span> <span class="nf">onAdClicked</span><span class="o">()</span> <span class="o">{</span>
+        <span class="kd">super</span><span class="o">.</span><span class="na">onAdClicked</span><span class="o">();</span>
+        <span class="n">mMediationRewardedVideoAdListener</span><span class="o">.</span><span class="na">onAdClicked</span><span class="o">(</span><span class="n">mSampleAdapter</span><span class="o">);</span>
+    <span class="o">}</span>
+
+    <span class="nd">@Override</span>
+    <span class="kd">public</span> <span class="kt">void</span> <span class="nf">onAdFullScreen</span><span class="o">()</span> <span class="o">{</span>
+        <span class="kd">super</span><span class="o">.</span><span class="na">onAdFullScreen</span><span class="o">();</span>
+        <span class="n">mMediationRewardedVideoAdListener</span><span class="o">.</span><span class="na">onAdOpened</span><span class="o">(</span><span class="n">mSampleAdapter</span><span class="o">);</span>
+        <span class="c1">// Only send video started here if your SDK starts video immediately after the ad has been</span>
+        <span class="c1">// opened/is fullscreen.</span>
+        <span class="n">mMediationRewardedVideoAdListener</span><span class="o">.</span><span class="na">onVideoStarted</span><span class="o">(</span><span class="n">mSampleAdapter</span><span class="o">);</span>
+    <span class="o">}</span>
+
+    <span class="nd">@Override</span>
+    <span class="kd">public</span> <span class="kt">void</span> <span class="nf">onAdClosed</span><span class="o">()</span> <span class="o">{</span>
+        <span class="kd">super</span><span class="o">.</span><span class="na">onAdClosed</span><span class="o">();</span>
+        <span class="n">mMediationRewardedVideoAdListener</span><span class="o">.</span><span class="na">onAdClosed</span><span class="o">(</span><span class="n">mSampleAdapter</span><span class="o">);</span>
+    <span class="o">}</span>
+
+    <span class="cm">/**</span>
+<span class="cm">    * Forwards the ad loaded event to AdMob SDK. The Sample SDK does not have an ad loaded</span>
+<span class="cm">    * callback, the adapter calls this method if an ad is available when loadAd is called.</span>
+<span class="cm">    */</span>
+    <span class="kd">protected</span> <span class="kt">void</span> <span class="nf">onAdLoaded</span><span class="o">()</span> <span class="o">{</span>
+        <span class="n">mMediationRewardedVideoAdListener</span><span class="o">.</span><span class="na">onAdLoaded</span><span class="o">(</span><span class="n">mSampleAdapter</span><span class="o">);</span>
+    <span class="o">}</span>
+
+    <span class="cm">/**</span>
+<span class="cm">    * Forwards the ad failed event to AdMob SDK. The Sample SDK does not have an ad failed to</span>
+<span class="cm">    * load callback, the adapter calls this method to forward the failure callback.</span>
+<span class="cm">    */</span>
+    <span class="kd">protected</span> <span class="kt">void</span> <span class="nf">onAdFailedToLoad</span><span class="o">()</span> <span class="o">{</span>
+        <span class="n">mMediationRewardedVideoAdListener</span><span class="o">.</span><span class="na">onAdFailedToLoad</span><span class="o">(</span>
+        <span class="n">mSampleAdapter</span><span class="o">,</span> <span class="n">AdRequest</span><span class="o">.</span><span class="na">ERROR_CODE_NO_FILL</span><span class="o">);</span>
+    <span class="o">}</span>
+
+    <span class="cm">/**</span>
+<span class="cm">    * Converts {@link SampleErrorCode} into an AdMob SDK&#39;s {@link AdRequest} error code.</span>
+<span class="cm">    *</span>
+<span class="cm">    * @param errorCode a Sample SDK error code.</span>
+<span class="cm">    * @return an AdMob SDK readable error code.</span>
+<span class="cm">    */</span>
+    <span class="kd">private</span> <span class="kt">int</span> <span class="nf">getAdMobErrorCode</span><span class="o">(</span><span class="n">SampleErrorCode</span> <span class="n">errorCode</span><span class="o">)</span> <span class="o">{</span>
+        <span class="k">switch</span> <span class="o">(</span><span class="n">errorCode</span><span class="o">)</span> <span class="o">{</span>
+            <span class="k">case</span> <span class="n">BAD_REQUEST</span><span class="o">:</span>
+            <span class="k">return</span> <span class="n">AdRequest</span><span class="o">.</span><span class="na">ERROR_CODE_INVALID_REQUEST</span><span class="o">;</span>
+        <span class="k">case</span> <span class="n">NETWORK_ERROR</span><span class="o">:</span>
+            <span class="k">return</span> <span class="n">AdRequest</span><span class="o">.</span><span class="na">ERROR_CODE_NETWORK_ERROR</span><span class="o">;</span>
+        <span class="k">case</span> <span class="n">NO_INVENTORY</span><span class="o">:</span>
+            <span class="k">return</span> <span class="n">AdRequest</span><span class="o">.</span><span class="na">ERROR_CODE_NO_FILL</span><span class="o">;</span>
+        <span class="k">case</span> <span class="n">UNKNOWN</span><span class="o">:</span>
+        <span class="k">default</span><span class="o">:</span>
+            <span class="k">return</span> <span class="n">AdRequest</span><span class="o">.</span><span class="na">ERROR_CODE_INTERNAL_ERROR</span><span class="o">;</span>
+        <span class="o">}</span>
+    <span class="o">}</span>
+<span class="o">}</span>
+</pre></div>
+</td></tr></table></div>
+<p>Third party ad networks likely have ad events listeners for their ad network. Ad events from the third party SDK should be mapped to corresponding ad events for the MediationRewardedVideoAdListener provided in the initialize() method of the adapter and invoked at the appropriate time.</p>
+<p>9. Notification of context changes :
+Your adapter can optionally implement the OnContextChangedListener to be notified of a change to the current context. The onContextChanged method is invoked when there is an update to the RewardedVideoAd object’s current context. The updated activity context can be accessed as shown below:</p>
+<div class="highlight-java"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>1
+2
+3
+4
+5
+6</pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="nd">@Override</span>
+<span class="kd">public</span> <span class="kt">void</span> <span class="nf">onContextChanged</span><span class="o">(</span><span class="n">Context</span> <span class="n">context</span><span class="o">)</span> <span class="o">{</span>
+    <span class="k">if</span> <span class="o">(</span><span class="n">context</span> <span class="k">instanceof</span> <span class="n">Activity</span><span class="o">)</span> <span class="o">{</span>
+        <span class="n">SampleRewardedVideo</span><span class="o">.</span><span class="na">setCurrentActivity</span><span class="o">((</span><span class="n">Activity</span><span class="o">)</span> <span class="n">context</span><span class="o">);</span>
+    <span class="o">}</span>
+<span class="o">}</span>
+</pre></div>
+</td></tr></table></div>
+</div>
+</div>
+</div>
+
+
+           </div>
+           <div class="articleComments">
+            
+           </div>
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="integration-checklists.html" class="btn btn-neutral float-right" title="Integration Checklists" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="ad-settings.html" class="btn btn-neutral" title="Ad Settings" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2017, Ogury.
+
+    </p>
+  </div> 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  
+
+    <script type="text/javascript">
+        var DOCUMENTATION_OPTIONS = {
+            URL_ROOT:'./',
+            VERSION:'0.4.0',
+            COLLAPSE_INDEX:false,
+            FILE_SUFFIX:'.html',
+            HAS_SOURCE:  true,
+            SOURCELINK_SUFFIX: '.txt'
+        };
+    </script>
+      <script type="text/javascript" src="_static/jquery.js"></script>
+      <script type="text/javascript" src="_static/underscore.js"></script>
+      <script type="text/javascript" src="_static/doctools.js"></script>
+
+  
+
+  
+  
+    <script type="text/javascript" src="_static/js/theme.js"></script>
+  
+
+  
+  
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.StickyNav.enable();
+      });
+  </script>
+   
+
+</body>
+</html>
