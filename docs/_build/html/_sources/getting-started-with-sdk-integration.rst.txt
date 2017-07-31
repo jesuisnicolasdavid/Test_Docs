@@ -17,7 +17,7 @@ Getting Started With the Ogury Android SDK
  **Step 1 - Basic Integration**
 ###################################
 | To begin monetizing your android application with the Ogury SDK, follow the :ref:`quickstart-integration` guide.
-| You can also check plugins integrations on the :ref:`plugins` page if needed.
+| You can also check plugins integrations on the :ref:`plugins` page if you are not only using native android.
 |
 
 #####################################
